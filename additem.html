@@ -1,66 +1,65 @@
 <!--Music App-->
 <!--Latasha Mallory-->
+<!--01.12.12-->
 <!--Term:  1201-->
 
 <!DOCTYPE html>
-
 <html>
+	
 <head>
-     <meta charset="utf-8" />
-        <meta name="description" content="An app that saves your music into an organized library. />
-        <meta name="keywords" content="music, build music library, Music Library Builder" />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="user-scalable=no, width=device-width" />
+	<meta charset="utf-8" />
+	<meta name="description" content="An app that saves your music into an organized library. />
+	<meta name="keywords" content="music, build music library, Music Library Builder" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="user-scalable=no, width=device-width" />
     <title>My First Music App</title>
 </head>
+
 <body>
         
-        <!--Header Tag-->
-        <h1>Add Item</h1>
-        <h2>Select Playlist:</h2>
+	<!--Header Tag-->
+	<h1>Add Item</h1>
+	<h2>Select Playlist:</h2>
         
-         <!--Form Tag-->
-        <form name="Playlists"
-              action="http://www.mydomain.com/myformhandler.cgi "
-              method="post">
-            <div align=" center ">
-                    <select name="My Playlists">
-                        <option value="Mellow">Smooth Sounds</option>
-                        <option value="Hard">Rock Hard</option>
-                        <option value="Sensual">Sensual Beats</option>
-                    </select>
-            </div>
-        </form>
+	<!--Form Tag-->
+	<form name="Playlists"
+		action="http://www.mydomain.com/myformhandler.cgi "
+		method="post">
+		<div align=" center ">
+			<select name="My Playlists">
+				<option value="Mellow">Smooth Sounds</option>
+				<option value="Hard">Rock Hard</option>
+				<option value="Sensual">Sensual Beats</option>
+			</select>
+		</div>
+	</form>
 
-        <h3>Track Info:</h3>
+	<h3>Track Info:</h3>
         
-        <!--Text Area-->
-        <form>
-                Artist Name:  <input type="text" name="artistname" /><br />
-                Album Name:  <input type="text" name="albumname" /><br />
-                Song Name:  <input type="text" name="songname" /><br />
-        </form>
-        <p></p>
-        <label for="mood">On a scale of 1 to 10, calm being 1, energetic being 10, my mood is:</label>
-                <input type="range" min="1" max="10" name="mood" type="range">
-        <p></p>
-       <!--Boolean Element-->
-        Do you want this track added to the selected playlist?
-        <form>
-                <input type="checkbox" name="playlist" value="Yes" /> Add song to playlist.<br />
-                <input type="checkbox" name="playlist" value="No" /> Do not add song to playlist.<br />
-        </form>
-        <p></p>
-        <label for="playliststartdate">Date playlist created:</label>
-                <input type="date" min="2002-01-01" max="2012-01-01"
-                       id="startdate" name="startdate" required aria-required="true"
-                       placeholder="2004-01-01">
-         <p></p>           
-        <form name="input" action="html_form_action.asp" method="get">
-                <input type="submit" value="Submit" />
-        </form>
-        <p></p>
-        <a href="#URL">Access Playlist</a>
+	<!--Text Area-->
+	<form>
+		Artist Name:  <input type="text" name="artistname" /><br />
+		Album Name:  <input type="text" name="albumname" /><br />
+		Song Name:  <input type="text" name="songname" /><br />
+	</form>
+	<label for="mood">On a scale of 1 to 10, calm being 1, energetic being 10, my mood is:</label>
+		<input type="range" min="1" max="10" name="mood" type="range">
+	
+	<!--Boolean Element-->
+		Do you want this track added to the selected playlist?
+	<form>
+		<input type="checkbox" name="playlist" value="Yes" /> Add song to playlist.<br />
+		<input type="checkbox" name="playlist" value="No" /> Do not add song to playlist.<br />
+	</form>
+	<label for="playliststartdate">Date playlist created:</label>
+	<input type="date" min="2002-01-01" max="2012-01-01"
+		id="startdate" name="startdate" required aria-required="true"
+		placeholder="2004-01-01">
+	<form name="input" action="html_form_action.asp" method="get">
+		<input type="submit" value="Submit" />
+	</form>
+	<a href="#URL">Access Playlist</a>
 
 </body>
+		
 </html>
