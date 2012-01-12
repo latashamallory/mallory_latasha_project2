@@ -5,10 +5,28 @@ Latasha Mallory
 Term:  1201
 */
 
+/*Make it look like an iPhone*/
+body{font-family: Arial, Helvetica, sans-serif;width: 571px;margin: auto;padding: 10px;}
+#site-wrapper{background: url(../img/iphone.png); no-repeat;height: 885px;padding-top: 20px;}
+#content{width: 480px;height: 690px;overflow: scroll;}
+
+
 h1 {
-	margin: 10px 20px;
+	margin-left: 10px 20px;
 	border: 1px solid #000;
-	border: 1px solid #333;
 	padding: 10px;
-	background: #f5f5f5 url('../images/bg.jpg') no-repeat left top;
+	background: #ff0000;
+	width: 50%;
+	
+*/
 }
+
+li{
+	visibility: hidden;
+}
+
+a{
+	outline: 1px dotted blue;
+}
+
+a;hover{color: white;outline: none;}
