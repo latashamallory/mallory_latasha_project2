@@ -46,6 +46,26 @@ window.addEventListener("DOMContentLoaded", function){
 		}
 	}
 	
+	function toggleControls(n) {
+		switch(n) {
+			case "on":
+				$('songForm').style.display = "none";
+				$('clear').style.display = "inline";
+				$('displayLink').style.display = "none";
+				$('add').style.display = "inline";
+				break;
+			case "off":
+				$('songForm').style.display = "block";
+				$('clear').style.display = "inline";
+				$('displayLink').style.display = "inline";
+				$('add').style.display = "none";
+				$('items').style.display = "none";
+				break;
+			default:
+				return false;
+		}
+	}
+	
 	function storeData() {
 		var id      = Math.floor(Math.random()*1000000001);
 		//Gather up all our form field values and store in an object.
@@ -68,17 +88,46 @@ window.addEventListener("DOMContentLoaded", function){
 	}
 	
 	function getData() {
+		toggleControls("on");
+		toggleControls("on");
+		if(localStorage.length === 0){
+			alert("There is no data in Local Storage.");
+	}
+	
+	function getData() {
 		//Write data from Local Storage to the browser.
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute(("id", "items");
 		var makeList - document.createElement('ul');
 		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement('li');
 			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
-			
+			//Convert string from local storage value back to an object by using JSON.parse()
+			var obj = JSON.parse(value);
+			var makeSubList = document.createElement('ul');
+			makeli.appendChild(makeSubList);
+			for(var x in obj){
+				var makeSubli = document.createElement('li');
+				makeSubList.appendChild(makeSubli);
+				var optSubText = obj[x][0]+" "+obj[x][1];
+				makeSubli.innerHTML = optSubText;
+			}
+		}
+	}
+	
+	function clearLocal() {
+		if(localStorage.length === 0){
+			alert("There's no data to clear.")
+		}else{
+			localStorage.clear();
+			alert("All songs are deleted!");
+			window.location.reload();
+			return false;
 		}
 	}
 	
