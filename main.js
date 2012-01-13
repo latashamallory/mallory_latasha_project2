@@ -18,9 +18,9 @@ window.addEventListener("DOMContentLoaded", function){
 			selectLi = $('select'),
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "groups");
-		for(var i = 0, j=playlistGroups.length); i<j; i++){
+		for(var i=0, j=listGroups.length); i<j; i++){
 			var makeOption = document.createElement('option');
-			var optText = playlistGroups[i];
+			var optText = listGroups[i];
 			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
@@ -28,8 +28,64 @@ window.addEventListener("DOMContentLoaded", function){
 		selectLi.appendChild(makeSelect);
 	}
 	
+	//Find value of selected radio button.
+	function  getSelectedRadio() {
+		var radios = document.forms[0].favorite;
+		for(var i=0; i<radios.length; i++){
+			if(radios[i].checked){
+			favoriteValue = radios[i].value;
+			}
+		}
+	}
+	
+	function getCheckboxValue() {
+		if($('add').value{
+		
+		}else{
+			favoriteValue = "No"
+		}
+	}
+	
+	function storeData() {
+		var id      = Math.floor(Math.random()*1000000001);
+		//Gather up all our form field values and store in an object.
+		//Object properties contain array with the form label and input value.
+		getSelectedRadio();
+		getCheckboxValue();
+		var item            = {};
+			item.group      = ["Group:", $('groups').value];
+			item.aname      = ["Artist Name:", $('aname').value];
+			item.alname     = ["Album Name:", $('alname').value];
+			item.sname      = ["Song Name:", $('sname').value];
+			item.favorite   = ["A Favorite Artist?:", favoriteValue];
+			item.add        = ["Add to Playlist?", $('add').value];
+			item.like       = ["Like Rating", $('like').value];
+			item.date       = ["Date Added", $('date').value];
+			item.notes      = ["Notes", $('notes').value];
+		//Save data into Local Storage:  Use Stringify to convert object to a string.
+		localStorage.setItem(id, JSON.stringify(item));
+		alert("Song Saved!");
+	}
+	
+	function getData() {
+		//Write data from Local Storage to the browser.
+		var makeDiv = document.createElement('div');
+		makeDiv.setAttribute(("id", "items");
+		var makeList - document.createElement('ul');
+		makeDiv.appendChild(makeList);
+		for(var i=0, len=localStorage.length; i<len;i++){
+			var makeli = document.createElement('li');
+			makeList.appendChild(makeli);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			
+		}
+	}
+	
 	//Variable defaults
-	var playlistGroups = ["--Choose A Playlist--", "Smooth Sounds", "Rock Hard", "Sensual Beats"];
+	var listGroups = ["--Choose A Playlist--", "Smooth Sounds", "Rock Hard", "Sensual Beats"]
+		favoriteValue = "No"
+		;
 	makeCats();
 	
 	//Set Link & Submit Click Events
@@ -38,6 +94,6 @@ window.addEventListener("DOMContentLoaded", function){
 	var clearLink = $('clear');
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
-	save.addEventListener("click", saveData);
+	save.addEventListener("click", storeData);
 	
 	}};
